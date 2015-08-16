@@ -9,10 +9,10 @@ import Core.Types
 
 def import_as_module(path):
     _, basename = os.path.split(path)
-    path = os.path.join(path, '.cake')
+    path = os.path.join(path, '.crate')
 
     if os.path.exists(path) is False:
-        raise Core.Error.CakeImportError('Component \'%s\' not found' % basename)
+        raise Core.Error.CrateImportError('Component \'%s\' not found' % basename)
     module = imp.load_source(basename, path)
 
     return module

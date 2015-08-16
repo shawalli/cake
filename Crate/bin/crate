@@ -14,8 +14,8 @@ prefix = []
 if core_dir == 'bin':
     
     prefix += [os.getcwd()]
-elif core_dir == 'Cake/bin':
-    prefix += [os.getcwd(), 'Cake']
+elif core_dir == 'Crate/bin':
+    prefix += [os.getcwd(), 'Crate']
 else:
     if core_dir == '.' or core_dir == '':
         core_dir = os.getcwd()

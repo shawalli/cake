@@ -32,6 +32,6 @@ class Node(object):
     def is_trivial(self):
         return False
 
-    def is_cake(self):
+    def is_crate(self):
         return False
 

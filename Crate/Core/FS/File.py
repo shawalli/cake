@@ -25,8 +25,8 @@ class File(Node.Node):
             self.name = self.suffix
             self.suffix = ''
 
-        if self.name == '.cake':
-            self.type = 'cake'
+        if self.name == '.crate':
+            self.type = 'crate'
 
         self.parent_node.children.append(self)
 
@@ -61,8 +61,8 @@ class File(Node.Node):
     def is_target(self):
         return self.type == 'target'
 
-    def is_cake(self):
-        return self.type == 'cake'
+    def is_crate(self):
+        return self.type == 'crate'
 
     def is_trivial(self):
         return self.type == 'trivial'

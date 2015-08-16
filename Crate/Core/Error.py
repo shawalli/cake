@@ -1,9 +1,9 @@
 
-class CakeException(Exception):
+class CrateException(Exception):
     pass
 
-class CakeImportError(CakeException):
+class CrateImportError(CrateException):
     pass
 
-class CakeMakerError(CakeException):
+class CrateMakerError(CrateException):
     pass

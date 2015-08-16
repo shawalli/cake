@@ -12,8 +12,8 @@ def parse_args(args):
     usage = '$(prog)s [--workspace=PATH] [-c|-d] [--component=PATH] [target-platform]'
     p = argparse.ArgumentParser(usage=usage)
 
-    p.add_argument('--workspace', type=str, metavar='PATH', help='Bases your workspace somewhere else. Default workspace will be at one level above top cake directory.')
-    p.add_argument('--component', type=str, metavar='PATH', default='.cake', help='Patch to component to make. Default is workspace-level component.')
+    p.add_argument('--workspace', type=str, metavar='PATH', help='Bases your workspace somewhere else. Default workspace will be at one level above top crate directory.')
+    p.add_argument('--component', type=str, metavar='PATH', default='.crate', help='Patch to component to make. Default is workspace-level component.')
     clean = p.add_mutually_exclusive_group()
     clean.add_argument('-c', dest='clean', action='store_true', default=False, help='Clean the build environment.')
     clean.add_argument('-d', dest='distclean', action='store_true', default=False, help='Clean the build environment for a specific component and target platform.')
@@ -53,7 +53,7 @@ def process_args(args):
     return new_args
 
 # construct platform by pulling out any options that match a naming scheme in platforms/
-# 1. see if component .cake exists; throw error if not.
+# 1. see if component .crate exists; throw error if not.
 # 2. go through all imported components, adding them as modules for use later
 def main(args):
     args = parse_args(args)
